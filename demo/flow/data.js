@@ -86,4 +86,4 @@ export default {
     'id': '494f8cc4',
     'index': 8
   }]
-}
+};

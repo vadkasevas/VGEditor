@@ -1,28 +1,28 @@
-import Editor from '@components/Base/Editor'
-import { upperFirst } from '@utils'
+import Editor from '@components/Editor/BaseEditor';
+import { upperFirst } from '@utils';
 
 export default {
   methods: {
     bindEvent () {
-      const { type } = this
-      const { handleBeforeAddPage } = this.root
+      const { type } = this;
+      const { handleBeforeAddPage } = this.root;
 
       handleBeforeAddPage(({ className }) => {
-        let host = Editor[className]
-        let keys = ['name', 'config', 'extend']
+        let host = Editor[className];
+        let keys = ['name', 'config', 'extend'];
 
         if (type === 'command') {
-          host = Editor
+          host = Editor;
         }
 
         if (type === 'behaviour') {
-          keys = ['name', 'behaviour', 'dependences']
+          keys = ['name', 'behaviour', 'dependences'];
         }
 
-        const args = keys.map(key => this[key])
+        const args = keys.map(key => this[key]);
 
-        host[`register${upperFirst(type)}`](...args)
-      })
+        host[`register${upperFirst(type)}`](...args);
+      });
     }
   },
 
@@ -37,6 +37,6 @@ export default {
   },
 
   render () {
-    return null
+    return null;
   }
-}
+};

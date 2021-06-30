@@ -19,26 +19,26 @@
 </template>
 
 <script>
-import VGEditor, { Mind } from 'vg-editor'
-import { MindToolbar } from '../components/EditorToolbar'
-import { MindDetailPanel } from '../components/EditorDetailPanel'
-import EditorMinimap from '../components/EditorMinimap'
-import { MindContextMenu } from '../components/EditorContextMenu'
-import mockData from '../mockData/mind-data'
+import VGEditor, { Mind } from 'vg-editor';
+import { MindToolbar } from '../components/EditorToolbar';
+import { MindDetailPanel } from '../components/EditorDetailPanel';
+import EditorMinimap from '../components/EditorMinimap';
+import { MindContextMenu } from '../components/EditorContextMenu';
+import mockData from '../mockData/mind-data';
 
 export default {
   name: 'KoniDemo',
 
   methods: {
     handleNodeClick (e) {
-      console.log(e)
+      console.log(e);
     }
   },
 
   data () {
     return {
       mockData
-    }
+    };
   },
 
   components: {
@@ -49,5 +49,5 @@ export default {
     EditorMinimap,
     MindContextMenu
   }
-}
+};
 </script>

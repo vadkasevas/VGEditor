@@ -23,20 +23,20 @@
 </template>
 
 <script>
-import VGEditor, { Flow, RegisterEdge } from 'vg-editor'
-import { FlowToolbar } from '../components/EditorToolbar'
-import { FlowItemPanel } from '../components/EditorItemPanel'
-import { FlowDetailPanel } from '../components/EditorDetailPanel'
-import EditorMinimap from '../components/EditorMinimap'
-import { FlowContextMenu } from '../components/EditorContextMenu'
-import data from './data'
+import VGEditor, { Flow, RegisterEdge } from 'vg-editor';
+import { FlowToolbar } from '../components/EditorToolbar';
+import { FlowItemPanel } from '../components/EditorItemPanel';
+import { FlowDetailPanel } from '../components/EditorDetailPanel';
+import EditorMinimap from '../components/EditorMinimap';
+import { FlowContextMenu } from '../components/EditorContextMenu';
+import data from './data';
 
 export default {
   name: 'FlowDemo',
 
   methods: {
     handleNodeClick (e) {
-      console.log(e)
+      console.log(e);
     }
   },
 
@@ -47,15 +47,15 @@ export default {
         getActivedStyle (item) {
           return {
             lineWidth: 3
-          }
+          };
         },
         getSelectedStyle (item) {
           return {
             lineWidth: 3
-          }
+          };
         }
       }
-    }
+    };
   },
 
   components: {
@@ -68,5 +68,5 @@ export default {
     FlowContextMenu,
     RegisterEdge
   }
-}
+};
 </script>

@@ -1,9 +1,9 @@
-import BaseMenu from './BaseMenu'
+import BaseMenu from './BaseMenu';
 
 export default {
   mixins: [BaseMenu],
   name: 'CanvasMenu',
   created () {
-    this.type = 'canvas'
+    this.type = 'canvas';
   }
-}
+};

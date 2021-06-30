@@ -7,11 +7,11 @@ export default {
   },
 
   render () {
-    const { name } = this
+    const { name } = this;
     return (
       <div data-command={name} class='command'>
         {this.$scopedSlots.default ? this.$scopedSlots.default() : this.$slots.default}
       </div>
-    )
+    );
   }
-}
+};

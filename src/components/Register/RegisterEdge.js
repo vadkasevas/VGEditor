@@ -1,11 +1,11 @@
-import BaseRegister from './BaseRegister'
+import BaseRegister from './BaseRegister';
 
 export default {
   mixins: [BaseRegister],
   name: 'RegisterEdge',
   created () {
-    this.type = 'edge'
+    this.type = 'edge';
 
-    this.bindEvent()
+    this.bindEvent();
   }
-}
+};

@@ -1,36 +1,36 @@
-import G6 from '@antv/g6'
-require('@antv/g6/build/plugin.tool.minimap')
-import { MINIMAP_CONTAINER } from '@common/constants'
+import G6 from '@antv/g6';
+import '@antv/g6/build/plugin.tool.minimap';
+import { MINIMAP_CONTAINER } from '@common/constants';
 
 export default {
   name: 'Minimap',
 
   created () {
-    this.bindEvent()
+    this.bindEvent();
   },
 
   mounted () {
-    this.init().then(this.bindPage)
+    this.init().then(this.bindPage);
   },
 
   beforeDestroy () {
-    this.minimap && this.minimap.destroy()
+    this.minimap && this.minimap.destroy();
   },
 
   methods: {
     bindEvent () {
-      this.root.handleAfterAddPage(this.bindPage)
+      this.root.handleAfterAddPage(this.bindPage);
     },
 
     init () {
       return new Promise(resolve => {
-        this.containerId = `${MINIMAP_CONTAINER}_${this.root.editor.id}`
-        const container = this.container || this.containerId
+        this.containerId = `${MINIMAP_CONTAINER}_${this.root.editor.id}`;
+        const container = this.container || this.containerId;
 
-        const { width, height, viewportWindowStyle, viewportBackStyle } = this
+        const { width, height, viewportWindowStyle, viewportBackStyle } = this;
 
         this.$nextTick(() => {
-          const { clientWidth, clientHeight } = document.getElementById(container)
+          const { clientWidth, clientHeight } = document.getElementById(container);
 
           this.minimap = new G6.Components.Minimap({
             container,
@@ -38,32 +38,32 @@ export default {
             height: height || clientHeight,
             viewportWindowStyle,
             viewportBackStyle
-          })
+          });
 
-          const currentPage = this.getCurrentPage()
-          this.minimap.getGraph = () => currentPage.getGraph()
+          const currentPage = this.getCurrentPage();
+          this.minimap.getGraph = () => currentPage.getGraph();
 
-          resolve()
-        })
-      })
+          resolve();
+        });
+      });
     },
 
     bindPage () {
-      const currentPage = this.getCurrentPage()
+      const currentPage = this.getCurrentPage();
 
       if (!this.minimap || !currentPage) {
-        return
+        return;
       }
 
-      const graph = currentPage.getGraph()
+      const graph = currentPage.getGraph();
 
-      this.minimap.bindGraph(graph)
-      this.minimap.debounceRender()
+      this.minimap.bindGraph(graph);
+      this.minimap.debounceRender();
     },
 
     getCurrentPage () {
-      const currentPage = this.root.editor.getCurrentPage()
-      return currentPage
+      const currentPage = this.root.editor.getCurrentPage();
+      return currentPage;
     }
   },
 
@@ -81,12 +81,12 @@ export default {
     return {
       containerId: '',
       minimap: null
-    }
+    };
   },
 
   render () {
     return (
       <div id={this.containerId}/>
-    )
+    );
   }
-}
+};

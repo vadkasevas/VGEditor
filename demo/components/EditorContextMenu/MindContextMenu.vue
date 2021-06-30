@@ -15,9 +15,9 @@
 </template>
 
 <script>
-import { NodeMenu, CanvasMenu, ContextMenu } from 'vg-editor'
-import MenuLi from './MenuItem'
-import './style.styl'
+import { NodeMenu, CanvasMenu, ContextMenu } from 'vg-editor';
+import MenuLi from './MenuItem';
+import './style.styl';
 
 export default {
   name: 'FlowContextMenu',
@@ -27,5 +27,5 @@ export default {
     ContextMenu,
     MenuLi
   }
-}
+};
 </script>

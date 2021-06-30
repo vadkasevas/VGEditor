@@ -32,8 +32,8 @@
 </template>
 
 <script>
-import { NodePanel, EdgePanel, GroupPanel, MultiPanel, CanvasPanel, DetailPanel } from 'vg-editor'
-import DetailForm from './DetailForm'
+import { NodePanel, EdgePanel, GroupPanel, MultiPanel, CanvasPanel, DetailPanel } from 'vg-editor';
+import DetailForm from './DetailForm';
 
 export default {
   name: 'FlowDetailPanel',
@@ -46,5 +46,5 @@ export default {
     DetailPanel,
     DetailForm
   }
-}
+};
 </script>

@@ -1,11 +1,11 @@
-import Editor from '@components/Base/Editor'
+import BaseEditor from '@components/Editor/BaseEditor';
 import {
   MIND_CONTAINER,
   MIND_CLASS_NAME,
   EVENT_BEFORE_ADD_PAGE,
   EVENT_AFTER_ADD_PAGE
-} from '@common/constants'
-import Page from '../Page'
+} from '@common/constants';
+import Page from "../Editor/Page";
 
 export default {
   mixins: [Page],
@@ -14,40 +14,40 @@ export default {
 
   methods: {
     initPage () {
-      const editor = this.root.editor
+      const editor = this.root.editor;
 
-      editor.emit(EVENT_BEFORE_ADD_PAGE, { className: MIND_CLASS_NAME })
+      editor.emit(EVENT_BEFORE_ADD_PAGE, { className: MIND_CLASS_NAME });
 
-      this.page = new Editor.Mind(this.config)
+      this.page = new BaseEditor.Mind(this.config);
 
-      editor.add(this.page)
+      editor.add(this.page);
 
-      editor.emit(EVENT_AFTER_ADD_PAGE, { page: this.page })
+      editor.emit(EVENT_AFTER_ADD_PAGE, { page: this.page });
     },
 
     bindEvent () {
-      Page.methods.bindEvent.call(this)
-      this.bindKeyUpEditLabel()
+      Page.methods.bindEvent.call(this);
+      this.bindKeyUpEditLabel();
     },
 
     bindKeyUpEditLabel () {
-      const editLabel = this.page.get('labelTextArea')
+      const editLabel = this.page.get('labelTextArea');
 
       editLabel.on('keyup', (e) => {
-        e.stopPropagation()
+        e.stopPropagation();
 
-        const item = editLabel.focusItem
-        const text = editLabel.textContent
+        const item = editLabel.focusItem;
+        const text = editLabel.textContent;
 
         this.page.emit('keyUpEditLabel', {
           item,
           text
-        })
-      })
+        });
+      });
     },
 
     getPageId () {
-      return `${MIND_CONTAINER}_${this.root.editor.id}`
+      return `${MIND_CONTAINER}_${this.root.editor.id}`;
     }
   },
 
@@ -56,4 +56,4 @@ export default {
     graph: Object,
     shortcut: Object
   }
-}
+};

@@ -8,9 +8,9 @@
 </template>
 
 <script>
-import { Command } from 'vg-editor'
-import Icon from '../Icon'
-import upperFirst from 'lodash/upperFirst'
+import { Command } from 'vg-editor';
+import Icon from '../Icon';
+import upperFirst from 'lodash/upperFirst';
 
 export default {
   name: 'MenuItem',
@@ -19,11 +19,11 @@ export default {
 
   computed: {
     iconType () {
-      return `icon-${this.icon || this.command}`
+      return `icon-${this.icon || this.command}`;
     },
 
     label () {
-      return this.text || upperFirst(this.command)
+      return this.text || upperFirst(this.command);
     }
   },
 
@@ -31,5 +31,5 @@ export default {
     Command,
     Icon
   }
-}
+};
 </script>

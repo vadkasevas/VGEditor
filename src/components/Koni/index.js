@@ -1,11 +1,11 @@
-import Editor from '@components/Base/Editor'
+import Editor from '@components/Editor/BaseEditor';
 import {
   KONI_CONTAINER,
   KONI_CLASS_NAME,
   EVENT_BEFORE_ADD_PAGE,
   EVENT_AFTER_ADD_PAGE
-} from '@common/constants'
-import Page from '../Page'
+} from '@common/constants';
+import Page from '../Editor/Page';
 
 export default {
   mixins: [Page],
@@ -14,19 +14,19 @@ export default {
 
   methods: {
     initPage () {
-      const editor = this.root.editor
+      const editor = this.root.editor;
 
-      editor.emit(EVENT_BEFORE_ADD_PAGE, { className: KONI_CLASS_NAME })
+      editor.emit(EVENT_BEFORE_ADD_PAGE, { className: KONI_CLASS_NAME });
 
-      this.page = new Editor.Koni(this.config)
+      this.page = new Editor.Koni(this.config);
 
-      editor.add(this.page)
+      editor.add(this.page);
 
-      editor.emit(EVENT_AFTER_ADD_PAGE, { page: this.page })
+      editor.emit(EVENT_AFTER_ADD_PAGE, { page: this.page });
     },
 
     getPageId () {
-      return `${KONI_CONTAINER}_${this.root.editor.id}`
+      return `${KONI_CONTAINER}_${this.root.editor.id}`;
     }
   },
 
@@ -38,4 +38,4 @@ export default {
     shortcut: Object,
     noEndEdge: { default: true, type: Boolean }
   }
-}
+};

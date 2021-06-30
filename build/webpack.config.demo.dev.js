@@ -1,14 +1,15 @@
 // const fs = require('fs')
-const path = require('path')
-const webpack = require('webpack')
-const merge = require('webpack-merge')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const webpackBaseConfig = require('./webpack.config.demo.base')
+const path = require('path');
+const webpack = require('webpack');
+const merge = require('webpack-merge');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpackBaseConfig = require('./webpack.config.demo.base');
 
-const demoPath = path.resolve(__dirname, '../demo')
+const demoPath = path.resolve(__dirname, '../demo');
 
 module.exports = merge(webpackBaseConfig, {
   mode: 'development',
+  resolve: { alias: { vue: 'vue/dist/vue.esm.js' } },
   entry: {
     demo: ['webpack-hot-middleware/client', path.resolve(demoPath, 'app.js')]
   },
@@ -25,4 +26,4 @@ module.exports = merge(webpackBaseConfig, {
       filename: 'index.html'
     })
   ]
-})
+});

@@ -14,9 +14,9 @@
 </template>
 
 <script>
-import { Toolbar } from 'vg-editor'
-import ToolbarButton from './ToolbarButton'
-import './style.styl'
+import { Toolbar } from 'vg-editor';
+import ToolbarButton from './ToolbarButton';
+import './style.styl';
 
 export default {
   name: 'MindToolbar',
@@ -25,5 +25,5 @@ export default {
     Toolbar,
     ToolbarButton
   }
-}
+};
 </script>

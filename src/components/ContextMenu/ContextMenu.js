@@ -1,31 +1,31 @@
-import Editor from '@components/Base/Editor'
-import { CONTEXT_MENU_CONTAINER } from '@common/constants'
+import BaseEditor from '@components/Editor/BaseEditor';
+import { CONTEXT_MENU_CONTAINER } from '@common/constants';
 
 export default {
   name: 'ContextMenu',
 
   mounted () {
-    const { editor } = this.root
-    this.getContainerId()
+    const { editor } = this.root;
+    this.getContainerId();
 
     this.$nextTick(() => {
-      this.contextMenu = new Editor.Contextmenu({
+      this.contextMenu = new BaseEditor.Contextmenu({
         container: this.containerId
-      })
+      });
 
-      editor.add(this.contextMenu)
-    })
+      editor.add(this.contextMenu);
+    });
   },
 
   beforeDestroy () {
-    this.contextMenu && this.contextMenu.destroy()
-    this.contextMenu = null
+    this.contextMenu && this.contextMenu.destroy();
+    this.contextMenu = null;
   },
 
   methods: {
     getContainerId () {
-      const { editor } = this.root
-      this.containerId = `${CONTEXT_MENU_CONTAINER}_${editor.id}`
+      const { editor } = this.root;
+      this.containerId = `${CONTEXT_MENU_CONTAINER}_${editor.id}`;
     }
   },
 
@@ -35,7 +35,7 @@ export default {
     return {
       contextMenu: null,
       containerId: ''
-    }
+    };
   },
 
   render () {
@@ -43,6 +43,6 @@ export default {
       <div id={this.containerId}>
         {this.$scopedSlots.default ? this.$scopedSlots.default() : this.$slots.default}
       </div>
-    )
+    );
   }
-}
+};

@@ -1,11 +1,11 @@
-import BaseRegister from './BaseRegister'
+import BaseRegister from './BaseRegister';
 
 export default {
   mixins: [BaseRegister],
   name: 'RegisterGroup',
   created () {
-    this.type = 'group'
+    this.type = 'group';
 
-    this.bindEvent()
+    this.bindEvent();
   }
-}
+};

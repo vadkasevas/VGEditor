@@ -40,10 +40,10 @@
 </template>
 
 <script>
-import { ItemPanel, Item } from 'vg-editor'
+import { ItemPanel, Item } from 'vg-editor';
 
 export default {
   name: 'MindItemPanel',
   components: { ItemPanel, Item }
-}
+};
 </script>

@@ -12,8 +12,8 @@
 </template>
 
 <script>
-import { NodePanel, CanvasPanel, DetailPanel } from 'vg-editor'
-import DetailForm from './DetailForm'
+import { NodePanel, CanvasPanel, DetailPanel } from 'vg-editor';
+import DetailForm from './DetailForm';
 
 export default {
   name: 'MindDetailPanel',
@@ -23,5 +23,5 @@ export default {
     DetailPanel,
     DetailForm
   }
-}
+};
 </script>

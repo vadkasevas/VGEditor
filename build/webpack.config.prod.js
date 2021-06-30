@@ -1,7 +1,7 @@
-const path = require('path')
-const webpack = require('webpack')
-const merge = require('webpack-merge')
-const webpackBaseConfig = require('./webpack.config.base')
+const path = require('path');
+const webpack = require('webpack');
+const merge = require('webpack-merge');
+const webpackBaseConfig = require('./webpack.config.base');
 
 module.exports = merge(webpackBaseConfig, {
   mode: 'production',
@@ -16,7 +16,7 @@ module.exports = merge(webpackBaseConfig, {
   },
   plugins: [
     new webpack.ProgressPlugin(function handler (percentage, msg) {
-      console.log((percentage.toFixed(2) * 100) + '%', msg)
+      console.log((percentage.toFixed(2) * 100) + '%', msg);
     })
   ],
   devtool: 'cheap-module-source-map',
@@ -28,4 +28,4 @@ module.exports = merge(webpackBaseConfig, {
       amd: 'vue'
     }
   }
-})
+});

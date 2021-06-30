@@ -5,8 +5,8 @@
 </template>
 
 <script>
-import { Command } from 'vg-editor'
-import Icon from '../Icon'
+import { Command } from 'vg-editor';
+import Icon from '../Icon';
 
 export default {
   name: 'ToolbarButton',
@@ -15,7 +15,7 @@ export default {
 
   computed: {
     iconType () {
-      return `icon-${this.icon || this.command}`
+      return `icon-${this.icon || this.command}`;
     }
   },
 
@@ -23,5 +23,5 @@ export default {
     Command,
     Icon
   }
-}
+};
 </script>

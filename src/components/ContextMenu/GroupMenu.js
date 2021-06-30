@@ -1,9 +1,9 @@
-import BaseMenu from './BaseMenu'
+import BaseMenu from './BaseMenu';
 
 export default {
   mixins: [BaseMenu],
   name: 'GroupMenu',
   created () {
-    this.type = 'group'
+    this.type = 'group';
   }
-}
+};

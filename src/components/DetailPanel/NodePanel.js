@@ -1,9 +1,9 @@
-import BasePanel from './BasePanel'
+import BasePanel from './BasePanel';
 
 export default {
   mixins: [BasePanel],
   name: 'NodePanel',
   created () {
-    this.type = 'node'
+    this.type = 'node';
   }
-}
+};

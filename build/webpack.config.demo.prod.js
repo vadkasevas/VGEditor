@@ -1,9 +1,9 @@
-const path = require('path')
-const merge = require('webpack-merge')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const webpackBaseConfig = require('./webpack.config.demo.base')
+const path = require('path');
+const merge = require('webpack-merge');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpackBaseConfig = require('./webpack.config.demo.base');
 
-const demoPath = path.resolve(__dirname, '../demo')
+const demoPath = path.resolve(__dirname, '../demo');
 
 module.exports = merge(webpackBaseConfig, {
   mode: 'production',
@@ -22,4 +22,4 @@ module.exports = merge(webpackBaseConfig, {
       filename: 'index.html'
     })
   ]
-})
+});

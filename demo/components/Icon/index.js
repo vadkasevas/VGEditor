@@ -4,13 +4,13 @@ export default {
   props: ['type'],
 
   render () {
-    const { type } = this
+    const { type } = this;
     return (
       <i class='action'>
         <svg width='1em' height='1em' fill='currentColor'>
           <use xlinkHref={`#${type}`}/>
         </svg>
       </i>
-    )
+    );
   }
-}
+};
